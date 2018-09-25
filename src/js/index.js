@@ -1,7 +1,8 @@
 const div = document.createElement("div");
 
-const text = 'Es6 syntax'
+const sassText = 'sass',
+      esText   = 'es6 syntax'
 
-div.innerHTML = `${text} is here`;
+div.innerHTML = `it works with ${sassText} and ${esText}`;
 
 document.body.appendChild(div);
