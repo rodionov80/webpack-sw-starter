@@ -6,4 +6,4 @@ to install dependencies
 ## npm run build 
 to build project
 
-## and then open your index.html file and enjoy
+### open your index.html file and enjoy
