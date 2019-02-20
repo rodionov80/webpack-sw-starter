@@ -1,4 +1,4 @@
-# Webpack4 Babel7 SASS Autoprefixer
+# Webpack4, Babel7, Sass, PostCss Autoprefixer
 
 ## npm i
 to install dependencies
