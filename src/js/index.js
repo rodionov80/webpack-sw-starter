@@ -1,14 +1,20 @@
 (() => {
   const div = document.createElement("div");
 
+  div.style.width = '330px'
+  div.style.height = '3rem'
+  div.style.textAlign = 'left'
+  div.style.backgroundColor = '#eee'
+  div.style.padding = '1rem'
   document.body.appendChild(div)
 
   const messages = [
-    'Technologies:',
+    'Technologies in use:',
     'Webpack',
     'Babel',
     'Sass',
-    'PostCss'
+    'PostCss',
+    '',
   ]
 
   let date = new Date().getTime()
@@ -32,5 +38,5 @@
   }
 
   render()
-  
+
 })()
