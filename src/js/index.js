@@ -5,7 +5,7 @@
   div.style.height = '3rem'
   div.style.textAlign = 'left'
   div.style.backgroundColor = '#eee'
-  div.style.padding = '1rem'
+  div.style.padding = '.65rem 1rem 1rem 1rem'
   div.style.display = 'flex'
   div.style.alignItems = 'center'
   document.body.appendChild(div)
