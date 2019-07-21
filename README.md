@@ -1,11 +1,15 @@
 # Webpack4, Babel7, Sass, PostCss Autoprefixer
 
-## npm i
+## npm i -D
 to install dependencies
 
-## npm run build 
-to build project
+## npm run start
+to watch
 
-### open your index.html file
-### enjoy
-![](https://zhitanska.com/wp-content/uploads/2017/08/IR-1.jpg)
+navigate into your dist folder
+open index.html in your browser
+
+## npm run build 
+to build
+
+###Author: Pavel Rodinoff

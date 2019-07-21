@@ -1,8 +1,36 @@
-const div = document.createElement("div");
+(() => {
+  const div = document.createElement("div");
 
-const sassText = 'sass',
-      esText   = 'es6 syntax'
+  document.body.appendChild(div)
 
-div.innerHTML = `it works with ${sassText} and ${esText}`;
+  const messages = [
+    'Technologies:',
+    'Webpack',
+    'Babel',
+    'Sass',
+    'PostCss'
+  ]
 
-document.body.appendChild(div);
+  let date = new Date().getTime()
+  let currentMessage = 0
+
+  const render = () => {
+    const newDate = new Date().getTime()
+
+    if (newDate - date > 1000) {
+
+      div.innerHTML = messages[currentMessage]
+      currentMessage += 1
+      date = newDate
+
+      if (currentMessage === messages.length) {
+        currentMessage = 0
+      }      
+    }
+
+    requestAnimationFrame(render)
+  }
+
+  render()
+  
+})()

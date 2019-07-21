@@ -1,3 +1,5 @@
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require('path');
 
@@ -12,7 +14,7 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.(png|jpg)$/,
+        test: /\.(woff2)$/,
         loader: "url-loader",
       },
       {
@@ -24,14 +26,14 @@ module.exports = {
           },
           {
             loader: "postcss-loader",
-            options: {
-              ident: 'postcss',
-              plugins: [
-                require('autoprefixer')({
-                  'browsers': ['> 1%', 'last 2 versions', 'IE > 7']
-                }),
-              ]
-            }
+            // options: {
+            //   ident: 'postcss',
+            //   plugins: [
+            //     require('autoprefixer')({
+            //       'browsers': ['> 1%', 'last 2 versions', 'IE > 7']
+            //     }),
+            //   ]
+            // }
           },
           {
             loader: 'sass-loader'
@@ -54,5 +56,17 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "style.css"
     }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/assets/',
+        to: './assets/'
+      },
+    ]),
+    new HtmlWebpackPlugin({
+      // filename is the name of the output file
+      // template is the name of the source file
+      filename: './index.html',
+      template: './index.html'
+    })
   ]
 };
