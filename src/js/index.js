@@ -6,6 +6,8 @@
   div.style.textAlign = 'left'
   div.style.backgroundColor = '#eee'
   div.style.padding = '1rem'
+  div.style.display = 'flex'
+  div.style.alignItems = 'center'
   document.body.appendChild(div)
 
   const messages = [
