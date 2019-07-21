@@ -9,7 +9,7 @@
   document.body.appendChild(div)
 
   const messages = [
-    'Technologies in use:',
+    'Technologies:',
     'Webpack',
     'Babel',
     'Sass',
