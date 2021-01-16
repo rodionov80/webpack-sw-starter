@@ -1,15 +1,5 @@
-# Webpack4, Babel7, Sass, PostCss Autoprefixer
-
-## npm i -D
-to install dependencies
-
-## npm run start
-to watch
-
-navigate into your dist folder
-open index.html in your browser
-
-## npm run build 
-to build
-
-###Author: Pavel Rodinoff
+This kit transpiles your ts into js  
+Converts scss into css  
+Adds prefixes to your css  
+Compresses images  
+Creates html from your handlebars templates
