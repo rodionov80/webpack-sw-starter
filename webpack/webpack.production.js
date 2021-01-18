@@ -2,7 +2,6 @@ const {merge} = require('webpack-merge')
 const common = require('./webpack.common.js')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
-const CompressionPlugin = require("compression-webpack-plugin");
 const path = require('path')
 
 module.exports = merge(common, {
@@ -45,7 +44,6 @@ module.exports = merge(common, {
         // don't precache images and CNAME
         /\.(png|svg|jpe?g|webp|gif)$/
       ]
-    }),
-    new CompressionPlugin()
+    })
   ]
 })
