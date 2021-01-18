@@ -3,22 +3,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
-
-const templates = [
-  {
-    template: './src/hbs/pages/index.hbs',
-    filename: './index.html'
-  }
-]
+const templates = require('./templates')
 
 module.exports = {
   entry: {
     bundle: [
-      path.resolve(__dirname, 'src/scripts/index.ts')
+      path.resolve(__dirname, '../src/scripts/index.ts')
     ],
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: '[name].[contenthash].bundle.js',
     publicPath: '/'
   },
@@ -32,7 +26,7 @@ module.exports = {
   resolve: {
     extensions: [ '.ts', '.js' ],
     alias: {
-      'media': path.resolve(__dirname, 'src/media/'),
+      'media': path.resolve(__dirname, '../src/media/'),
     }
   },
   module: {
@@ -42,7 +36,7 @@ module.exports = {
         loader: 'handlebars-loader',
         options: {
           inlineRequires: /\.(png|svg|jpe?g|webp|gif|ico)$/i,
-          rootRelative: path.join(__dirname, 'src/hbs/'),
+          rootRelative: path.join(__dirname, '../src/hbs/'),
           precompileOptions: {
             knownHelpersOnly: false
           },
@@ -101,7 +95,7 @@ module.exports = {
             presets: ['@babel/preset-env']
           }
         }
-      }
+      },
     ]
   },
   plugins: [
@@ -112,9 +106,13 @@ module.exports = {
     new CopyWebpackPlugin({
           patterns: [
             {
-              from: path.resolve(__dirname, 'manifest.json'),
+              from: path.resolve(__dirname, '../manifest.json'),
               to: 'manifest.json'
             },
+            {
+              from: path.resolve(__dirname, '../src/media/icons/maskable_icon.png'),
+              to: 'pwa/icons/maskable_icon.png'
+            }
           ]
         }
     ),

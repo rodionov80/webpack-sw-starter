@@ -1,4 +1,7 @@
 import '../styles/style.scss'
-import welcome from './includes/welcome'
+import delay from './includes/delay.ts'
 
-welcome()
+(async () => {
+    await delay(3000)
+    console.log('Hello world')
+})()

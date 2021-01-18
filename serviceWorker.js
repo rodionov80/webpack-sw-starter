@@ -7,9 +7,7 @@ import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 // Used to limit entries in cache, remove entries after a certain period of time
 import { ExpirationPlugin } from 'workbox-expiration';
 
-
-const entries = Array.from(self.__WB_MANIFEST)
-precacheAndRoute(entries, {
+precacheAndRoute(self.__WB_MANIFEST, {
   ignoreURLParametersMatching: [/.*/]
 })
 

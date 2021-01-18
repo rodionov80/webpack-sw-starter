@@ -1,16 +1,16 @@
 const {merge} = require('webpack-merge')
 const common = require('./webpack.common.js')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
+const path = require('path')
 
 module.exports = merge(common, {
   mode: 'production',
   module: {
     rules: [
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        exclude: /sqip/,
+        test: /\.(png|svg|jpe?g|gif|ico)$/,
         use: [
           {
             loader: 'file-loader', // Or `url-loader` or your other loader
@@ -38,22 +38,14 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: './CNAME',
-    //       to: './'
-    //     }
-    //   ]
-    // }),
     new InjectManifest({
-      swSrc: path.resolve(__dirname, 'serviceWorker.js'),
-      swDest: './serviceWorker.js',
+      swSrc: path.resolve(__dirname, '../serviceWorker.js'),
+      swDest: 'serviceWorker.js',
       exclude: [
         // don't precache images and CNAME
-        /\.(png|svg|jpe?g|webp|gif)$/,
-        /CNAME/
+        /\.(png|svg|jpe?g|webp|gif)$/
       ]
-    })
+    }),
+    new CompressionPlugin()
   ]
 })

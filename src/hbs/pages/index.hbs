@@ -1,41 +1,37 @@
 {{#> layouts/base }}
   {{#*inline "content"}}
 
-    <div class="content">
-      <main class="main">
-        <header class="header">
-          <h1 class="header-title">
-            Placeholder title (Main title)
-          </h1>
-        </header>
-        <section class="posts">
-          <article class="post">
-            <a href='#'>
-              <h3 class="post-title">
-                Placeholder link
-              </h3>
-            </a>
-          </article>
-          <article class="post">
-            <h3 class="post-title">
-              <a href='#'>
-                Placeholder link
-              </a>
-            </h3>
-          </article>
-          <article class="post">
-            <a href='#'>
-              <h3 class="post-title">
-                Placeholder link
-              </h3>
-            </a>
-          </article>
-        </section>
-      </main>
-
-      {{> includes/footer }}
-
-    </div>
+    <main class="main">
+      <header class="header">
+        <h1 class="header-title">
+          Webpack SW Starter
+        </h1>
+      </header>
+      <h2 class="title">Supported features:</h2>
+      <ul class="features">
+        <li>
+          <a href="https://www.typescriptlang.org/">Typescript</a>
+        </li>
+        <li>
+          <a href="https://sass-lang.com/">Sass</a>
+        </li>
+        <li>
+          <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>
+        </li>
+        <li>
+          <a href="https://handlebarsjs.com/">Handlebars</a>
+        </li>
+        <li>
+          <a href="https://developers.google.com/web/tools/workbox/">Workbox</a>
+        </li>
+        <li>
+          <a href="https://webpack.js.org/plugins/compression-webpack-plugin/#root">Compression</a>
+        </li>
+        <li>
+          <a href="https://webpack.js.org/configuration/dev-server/#root">DevServer</a>
+        </li>
+      </ul>
+    </main>
 
   {{/inline}}
 {{/ layouts/base }}
